@@ -52,6 +52,12 @@ function scoreText(match) {
   return `${home} : ${away}`;
 }
 
+function matchEmptyText() {
+  if (boardState.filter === "live") return "当前没有进行中的比赛。切回“全部”可以查看已确认赛程。";
+  if (boardState.filter === "finished") return "当前没有已完赛比赛。切回“全部”可以查看已确认赛程。";
+  return "这一天暂时没有已确认时间的比赛。";
+}
+
 function renderMatches() {
   const matches = confirmedMatches().filter((match) => {
     if (boardState.filter === "all") return true;
@@ -71,7 +77,7 @@ function renderMatches() {
         </span>
       </button>
     `).join("")
-    : `<div class="empty-state">这一天暂时没有已确认时间的比赛。</div>`;
+    : `<div class="empty-state">${matchEmptyText()}</div>`;
 
   document.querySelectorAll(".match-row").forEach((row) => {
     row.addEventListener("click", () => {
