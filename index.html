@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>世界杯比分看板</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="dateline" id="dateline">2026 世界杯</p>
+          <h1>世界杯比分看板</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" id="importButton" aria-label="导入数据">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v3a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-3"/></svg>
+          </button>
+          <button class="icon-button" id="exportButton" aria-label="导出数据">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V10m0 0 4 4m-4-4-4 4M5 9V6a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/></svg>
+          </button>
+          <div class="update-chip">
+            <span></span>
+            <strong id="updateTime">更新于 --:--</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel match-panel" aria-labelledby="matchesTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">今日赛程</p>
+              <h2 id="matchesTitle">比分与状态</h2>
+            </div>
+            <div class="segmented" role="tablist" aria-label="筛选比赛">
+              <button class="segment active" data-filter="all">全部</button>
+              <button class="segment" data-filter="live">进行中</button>
+              <button class="segment" data-filter="finished">已完赛</button>
+            </div>
+          </div>
+          <div class="match-list" id="matchList"></div>
+        </section>
+
+        <section class="center-stack">
+          <article class="panel feature-panel" aria-labelledby="featureTitle">
+            <div class="panel-heading">
+              <div>
+                <p class="section-label">焦点比赛</p>
+                <h2 id="featureTitle">赛况脉搏</h2>
+              </div>
+              <span class="status-pill" id="featureStatus">已完赛</span>
+            </div>
+            <div class="feature-score">
+              <div class="feature-team">
+                <span id="featureHomeFlag">MEX</span>
+                <strong id="featureHome">墨西哥</strong>
+              </div>
+              <div class="score-lockup">
+                <b id="featureScore">2 : 0</b>
+                <small id="featureMinute">90'</small>
+              </div>
+              <div class="feature-team right">
+                <span id="featureAwayFlag">RSA</span>
+                <strong id="featureAway">南非</strong>
+              </div>
+            </div>
+            <p class="feature-note" id="featureNote">下半场连续压迫形成优势，边路传中和定位球成为比赛分水岭。</p>
+            <div class="stat-grid" id="featureStats"></div>
+          </article>
+
+          <section class="panel progress-panel" aria-labelledby="progressTitle">
+            <div class="panel-heading">
+              <div>
+                <p class="section-label">小组进展</p>
+                <h2 id="progressTitle">积分概览</h2>
+              </div>
+              <select id="groupSelect" aria-label="选择小组"></select>
+            </div>
+            <div class="standings" id="standings"></div>
+          </section>
+
+          <section class="panel notes-panel" aria-labelledby="notesTitle">
+            <div class="panel-heading">
+              <div>
+                <p class="section-label">每日记录</p>
+                <h2 id="notesTitle">写下今天的看点</h2>
+              </div>
+              <button class="text-button" id="saveNoteButton">加入记录</button>
+            </div>
+            <div class="note-form">
+              <input id="noteTime" type="time" value="21:30" aria-label="记录时间" />
+              <input id="noteTitle" type="text" placeholder="标题，例如：补时绝杀" aria-label="精彩瞬间标题" />
+              <textarea id="noteBody" rows="3" placeholder="写下这一刻发生了什么、为什么精彩。" aria-label="精彩瞬间正文"></textarea>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel moments-panel" aria-labelledby="momentsTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">精彩瞬间</p>
+              <h2 id="momentsTitle">文字时间线</h2>
+            </div>
+            <span class="moment-count" id="momentCount">0 条</span>
+          </div>
+          <div class="moment-feed" id="momentFeed"></div>
+        </aside>
+      </main>
+
+      <footer class="calendar-strip" aria-label="按日期查看">
+        <button class="date-card active" data-date="2026-06-12">
+          <span>今天</span><strong>6月12日</strong><small>3 场比赛</small>
+        </button>
+        <button class="date-card" data-date="2026-06-13">
+          <span>明天</span><strong>6月13日</strong><small>4 场比赛</small>
+        </button>
+        <button class="date-card" data-date="2026-06-14">
+          <span>后天</span><strong>6月14日</strong><small>4 场比赛</small>
+        </button>
+        <button class="date-card" data-date="2026-06-15">
+          <span>周一</span><strong>6月15日</strong><small>5 场比赛</small>
+        </button>
+      </footer>
+    </div>
+
+    <input id="importFile" type="file" accept="application/json" hidden />
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
