@@ -43,6 +43,12 @@ function currentDay() {
   return boardState.data.days[boardState.date] || { matches: [], moments: [], standings: {} };
 }
 
+function confirmedMatches(day = currentDay()) {
+  return (day.matches || []).filter((match) => (
+    match.status !== "scheduled" || match.minute !== "待定"
+  ));
+}
+
 function scoreText(match) {
   const home = match.home.score ?? "-";
   const away = match.away.score ?? "-";
@@ -50,7 +56,7 @@ function scoreText(match) {
 }
 
 function renderMatches() {
-  const matches = currentDay().matches.filter((match) => {
+  const matches = confirmedMatches().filter((match) => {
     if (boardState.filter === "all") return true;
     return match.status === boardState.filter;
   });
@@ -68,7 +74,7 @@ function renderMatches() {
         </span>
       </button>
     `).join("")
-    : `<div class="empty-state">这一天还没有录入比赛。把赛程加进 <code>data.js</code> 就会显示在这里。</div>`;
+    : `<div class="empty-state">这一天暂时没有已确认时间的比赛。</div>`;
 
   document.querySelectorAll(".match-row").forEach((row) => {
     row.addEventListener("click", () => {
@@ -151,11 +157,12 @@ function renderDateCards() {
   const dates = Object.keys(boardState.data.days || {}).sort();
   els.calendarStrip.innerHTML = dates.map((date) => {
     const day = boardState.data.days[date];
+    const confirmedCount = confirmedMatches(day).length;
     return `
       <button class="date-card ${date === boardState.date ? "active" : ""}" data-date="${date}">
         <span>${day.tag || "赛程日"}</span>
         <strong>${day.label || date}</strong>
-        <small>${(day.matches || []).length} 场比赛</small>
+        <small>${confirmedCount} 场确认比赛</small>
       </button>
     `;
   }).join("");
@@ -174,7 +181,7 @@ function renderAll() {
   els.updateTime.textContent = `更新于 ${boardState.data.meta.updatedAt}`;
   renderDateCards();
   renderMatches();
-  renderFeature(day.matches[0]);
+  renderFeature(confirmedMatches(day)[0]);
   renderGroups();
   renderMoments();
 }
