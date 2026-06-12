@@ -39,7 +39,8 @@ const els = {
   saveNoteButton: document.querySelector("#saveNoteButton"),
   exportButton: document.querySelector("#exportButton"),
   importButton: document.querySelector("#importButton"),
-  importFile: document.querySelector("#importFile")
+  importFile: document.querySelector("#importFile"),
+  calendarStrip: document.querySelector("#calendarStrip")
 };
 
 function currentDay() {
@@ -151,12 +152,23 @@ function renderMoments() {
 }
 
 function renderDateCards() {
-  document.querySelectorAll(".date-card").forEach((card) => {
-    const day = boardState.data.days[card.dataset.date];
-    card.classList.toggle("active", card.dataset.date === boardState.date);
-    if (day) {
-      card.querySelector("small").textContent = `${day.matches.length} 场比赛`;
-    }
+  const dates = Object.keys(boardState.data.days || {}).sort();
+  els.calendarStrip.innerHTML = dates.map((date) => {
+    const day = boardState.data.days[date];
+    return `
+      <button class="date-card ${date === boardState.date ? "active" : ""}" data-date="${date}">
+        <span>${day.tag || "赛程日"}</span>
+        <strong>${day.label || date}</strong>
+        <small>${(day.matches || []).length} 场比赛</small>
+      </button>
+    `;
+  }).join("");
+
+  els.calendarStrip.querySelectorAll(".date-card").forEach((button) => {
+    button.addEventListener("click", () => {
+      boardState.date = button.dataset.date;
+      renderAll();
+    });
   });
 }
 
@@ -177,13 +189,6 @@ document.querySelectorAll(".segment").forEach((button) => {
     button.classList.add("active");
     boardState.filter = button.dataset.filter;
     renderMatches();
-  });
-});
-
-document.querySelectorAll(".date-card").forEach((button) => {
-  button.addEventListener("click", () => {
-    boardState.date = button.dataset.date;
-    renderAll();
   });
 });
 
