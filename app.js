@@ -117,6 +117,10 @@ function matchMinute(match) {
   return confirmedKickoffTimes[match.id] || match.minute;
 }
 
+function isFocusTeamMatch(match) {
+  return [match.home.code, match.away.code].some((code) => code === "FRA" || code === "ESP");
+}
+
 function confirmedMatches(day = currentDay()) {
   return (day.matches || []).filter((match) => (
     match.status !== "scheduled" || matchMinute(match) !== "待定"
@@ -143,7 +147,7 @@ function renderMatches() {
 
   els.matchList.innerHTML = matches.length
     ? matches.map((match) => `
-      <button class="match-row" data-match-id="${match.id}">
+      <button class="match-row ${isFocusTeamMatch(match) ? "focus-team-match" : ""}" data-match-id="${match.id}">
         <span class="team-code">${match.home.code}</span>
         <span class="team-name">${match.home.name}</span>
         <strong>${scoreText(match)}</strong>
@@ -238,9 +242,10 @@ function renderDateCards() {
   els.calendarStrip.innerHTML = dates.map((date) => {
     const day = boardState.data.days[date];
     const confirmedCount = confirmedMatches(day).length;
+    const hasFocusTeam = confirmedMatches(day).some(isFocusTeamMatch);
     return `
-      <button class="date-card ${date === boardState.date ? "active" : ""}" data-date="${date}">
-        <span>${day.tag || "赛程日"}</span>
+      <button class="date-card ${date === boardState.date ? "active" : ""} ${hasFocusTeam ? "focus-team-date" : ""}" data-date="${date}">
+        <span>${hasFocusTeam ? "法国/西班牙" : day.tag || "赛程日"}</span>
         <strong>${day.label || date}</strong>
         <small>${confirmedCount} 场确认比赛</small>
       </button>
