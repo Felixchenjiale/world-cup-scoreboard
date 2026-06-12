@@ -16,6 +16,79 @@ const statusClass = {
   scheduled: "scheduled"
 };
 
+const confirmedKickoffTimes = {
+  "can-bih": "6/13 03:00",
+  "usa-par": "6/13 09:00",
+  "hai-sco": "6/14 09:00",
+  "aus-tur": "6/14 12:00",
+  "bra-mar": "6/14 06:00",
+  "qat-sui": "6/14 03:00",
+  "civ-ecu": "6/15 07:00",
+  "ger-cur": "6/15 01:00",
+  "ned-jpn": "6/15 04:00",
+  "swe-tun": "6/15 10:00",
+  "ksa-uru": "6/16 06:00",
+  "esp-cpv": "6/16 00:00",
+  "irn-nzl": "6/16 09:00",
+  "bel-egy": "6/16 03:00",
+  "fra-sen": "6/17 03:00",
+  "irq-nor": "6/17 06:00",
+  "arg-alg": "6/17 09:00",
+  "aut-jor": "6/17 12:00",
+  "gha-pan": "6/18 07:00",
+  "eng-cro": "6/18 04:00",
+  "por-cod": "6/18 01:00",
+  "uzb-col": "6/18 10:00",
+  "cze-rsa": "6/19 00:00",
+  "sui-bih": "6/19 03:00",
+  "can-qat": "6/19 06:00",
+  "mex-kor": "6/19 09:00",
+  "bra-hai": "6/20 08:30",
+  "sco-mar": "6/20 06:00",
+  "tur-par": "6/20 11:00",
+  "usa-aus": "6/20 03:00",
+  "ger-civ": "6/21 04:00",
+  "ecu-cur": "6/21 08:00",
+  "ned-swe": "6/21 01:00",
+  "tun-jpn": "6/21 12:00",
+  "uru-cpv": "6/22 06:00",
+  "esp-ksa": "6/22 00:00",
+  "bel-irn": "6/22 03:00",
+  "nzl-egy": "6/22 09:00",
+  "nor-sen": "6/23 08:00",
+  "fra-irq": "6/23 05:00",
+  "arg-aut": "6/23 01:00",
+  "jor-alg": "6/23 11:00",
+  "eng-gha": "6/24 04:00",
+  "pan-cro": "6/24 07:00",
+  "por-uzb": "6/24 01:00",
+  "col-cod": "6/24 10:00",
+  "sco-bra": "6/25 06:00",
+  "mar-hai": "6/25 06:00",
+  "sui-can": "6/25 03:00",
+  "bih-qat": "6/25 03:00",
+  "cze-mex": "6/25 00:00",
+  "rsa-kor": "6/25 09:00",
+  "cur-civ": "6/26 04:00",
+  "ecu-ger": "6/26 04:00",
+  "jpn-swe": "6/26 07:00",
+  "tun-ned": "6/26 07:00",
+  "tur-usa": "6/26 10:00",
+  "par-aus": "6/26 10:00",
+  "nor-fra": "6/27 03:00",
+  "sen-irq": "6/27 03:00",
+  "egy-irn": "6/27 11:00",
+  "nzl-bel": "6/27 11:00",
+  "cpv-ksa": "6/27 08:00",
+  "uru-esp": "6/27 08:00",
+  "pan-eng": "6/28 05:00",
+  "cro-gha": "6/28 05:00",
+  "alg-aut": "6/28 10:00",
+  "jor-arg": "6/28 10:00",
+  "col-por": "6/28 07:30",
+  "cod-uzb": "6/28 07:30"
+};
+
 const els = {
   dateline: document.querySelector("#dateline"),
   updateTime: document.querySelector("#updateTime"),
@@ -40,9 +113,13 @@ function currentDay() {
   return boardState.data.days[boardState.date] || { matches: [], moments: [], standings: {} };
 }
 
+function matchMinute(match) {
+  return confirmedKickoffTimes[match.id] || match.minute;
+}
+
 function confirmedMatches(day = currentDay()) {
   return (day.matches || []).filter((match) => (
-    match.status !== "scheduled" || match.minute !== "待定"
+    match.status !== "scheduled" || matchMinute(match) !== "待定"
   ));
 }
 
@@ -73,7 +150,7 @@ function renderMatches() {
         <span class="team-name away">${match.away.name}</span>
         <span class="team-code">${match.away.code}</span>
         <span class="match-meta">
-          <i class="${statusClass[match.status]}"></i>${statusLabel[match.status]} · ${match.minute}
+          <i class="${statusClass[match.status]}"></i>${statusLabel[match.status]} · ${matchMinute(match)}
         </span>
       </button>
     `).join("")
@@ -106,7 +183,7 @@ function renderFeature(match = currentDay().matches[0]) {
   els.featureHomeFlag.textContent = match.home.code;
   els.featureAwayFlag.textContent = match.away.code;
   els.featureScore.textContent = scoreText(match);
-  els.featureMinute.textContent = match.minute;
+  els.featureMinute.textContent = matchMinute(match);
   els.featureStatus.textContent = statusLabel[match.status];
   els.featureNote.textContent = match.note;
   els.featureStats.innerHTML = (match.stats || []).map((stat) => `
