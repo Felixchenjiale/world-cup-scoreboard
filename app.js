@@ -33,9 +33,6 @@ const els = {
   standings: document.querySelector("#standings"),
   momentFeed: document.querySelector("#momentFeed"),
   momentCount: document.querySelector("#momentCount"),
-  exportButton: document.querySelector("#exportButton"),
-  importButton: document.querySelector("#importButton"),
-  importFile: document.querySelector("#importFile"),
   calendarStrip: document.querySelector("#calendarStrip")
 };
 
@@ -196,23 +193,5 @@ document.querySelectorAll(".segment").forEach((button) => {
 });
 
 els.groupSelect.addEventListener("change", (event) => renderStandings(event.target.value));
-
-els.exportButton.addEventListener("click", () => {
-  const blob = new Blob([JSON.stringify(boardState.data, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `world-cup-board-${boardState.date}.json`;
-  link.click();
-  URL.revokeObjectURL(url);
-});
-
-els.importButton.addEventListener("click", () => els.importFile.click());
-els.importFile.addEventListener("change", async (event) => {
-  const file = event.target.files[0];
-  if (!file) return;
-  boardState.data = JSON.parse(await file.text());
-  renderAll();
-});
 
 renderAll();
