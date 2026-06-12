@@ -454,8 +454,10 @@ select {
 }
 
 .calendar-strip {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   margin-top: 16px;
+  max-height: 190px;
+  overflow: auto;
 }
 
 .date-card {
