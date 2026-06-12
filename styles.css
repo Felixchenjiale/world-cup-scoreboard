@@ -11,6 +11,7 @@
   --red: #ff6b6b;
   --blue: #5fb8ff;
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  --board-panel-height: clamp(700px, calc(100vh - 290px), 860px);
 }
 
 * { box-sizing: border-box; }
@@ -139,6 +140,7 @@ h2 {
 .dashboard {
   grid-template-columns: minmax(320px, 0.92fr) minmax(380px, 1.18fr) minmax(320px, 0.9fr);
   align-items: stretch;
+  grid-auto-rows: minmax(var(--board-panel-height), auto);
 }
 
 .panel {
@@ -185,6 +187,24 @@ h2 {
 .moment-feed {
   display: grid;
   gap: 10px;
+}
+
+.match-panel,
+.moments-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--board-panel-height);
+}
+
+.center-stack {
+  min-height: var(--board-panel-height);
+}
+
+.match-list,
+.moment-feed {
+  min-height: 0;
+  overflow: auto;
+  padding-right: 2px;
 }
 
 .match-row {
@@ -411,14 +431,8 @@ select {
   white-space: nowrap;
 }
 
-.moments-panel {
-  min-height: 100%;
-}
-
 .moment-feed {
-  max-height: 610px;
-  overflow: auto;
-  padding-right: 2px;
+  flex: 1;
 }
 
 .moment {
@@ -498,6 +512,7 @@ code {
 @media (max-width: 1120px) {
   .dashboard {
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
   }
 
   .moments-panel {
@@ -506,6 +521,10 @@ code {
 }
 
 @media (max-width: 760px) {
+  :root {
+    --board-panel-height: auto;
+  }
+
   .app-shell {
     width: min(100% - 20px, 620px);
     padding-top: 16px;
