@@ -88,31 +88,12 @@ h2 {
   gap: 10px;
 }
 
-.icon-button,
 .segment,
 .date-card,
 .match-row {
   border: 1px solid var(--line);
   color: var(--text);
   background: rgba(255, 255, 255, 0.04);
-}
-
-.icon-button {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border-radius: 8px;
-}
-
-.icon-button svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 .update-chip {
@@ -503,10 +484,6 @@ code {
   .calendar-strip,
   .center-stack {
     grid-template-columns: 1fr;
-  }
-
-  .top-actions {
-    justify-content: space-between;
   }
 
   .panel {
