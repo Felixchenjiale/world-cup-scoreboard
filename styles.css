@@ -202,6 +202,25 @@ h2 {
   background: rgba(57, 217, 138, 0.08);
 }
 
+.match-row.focus-team-match {
+  position: relative;
+  border-color: rgba(246, 200, 95, 0.7);
+  background:
+    linear-gradient(90deg, rgba(246, 200, 95, 0.16), transparent 72%),
+    rgba(255, 255, 255, 0.05);
+}
+
+.match-row.focus-team-match::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--gold);
+}
+
 .team-code {
   display: inline-flex;
   align-items: center;
@@ -435,6 +454,23 @@ select {
 .date-card.active {
   border-color: rgba(57, 217, 138, 0.62);
   background: rgba(57, 217, 138, 0.1);
+}
+
+.date-card.focus-team-date {
+  border-color: rgba(246, 200, 95, 0.7);
+  background:
+    linear-gradient(135deg, rgba(246, 200, 95, 0.16), transparent 68%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.date-card.focus-team-date.active {
+  border-color: var(--gold);
+  box-shadow: inset 0 0 0 1px rgba(246, 200, 95, 0.28);
+}
+
+.date-card.focus-team-date span {
+  color: var(--gold);
+  font-weight: 800;
 }
 
 .date-card span,
