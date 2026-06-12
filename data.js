@@ -2,7 +2,7 @@ window.WORLD_CUP_BOARD_DATA = {
   meta: {
     tournament: "2026 世界杯",
     mode: "公开来源更新",
-    updatedAt: "2026-06-12 13:30"
+    updatedAt: "2026-06-12 21:58"
   },
   days: {
     "2026-06-12": {
