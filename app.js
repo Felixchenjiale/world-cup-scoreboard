@@ -33,10 +33,6 @@ const els = {
   standings: document.querySelector("#standings"),
   momentFeed: document.querySelector("#momentFeed"),
   momentCount: document.querySelector("#momentCount"),
-  noteTime: document.querySelector("#noteTime"),
-  noteTitle: document.querySelector("#noteTitle"),
-  noteBody: document.querySelector("#noteBody"),
-  saveNoteButton: document.querySelector("#saveNoteButton"),
   exportButton: document.querySelector("#exportButton"),
   importButton: document.querySelector("#importButton"),
   importFile: document.querySelector("#importFile"),
@@ -148,7 +144,7 @@ function renderMoments() {
         </div>
       </article>
     `).join("")
-    : `<div class="empty-state">今天还没有精彩瞬间。可以在下方录入第一条文字记录。</div>`;
+    : `<div class="empty-state">今天还没有精彩瞬间，等待下一次数据更新。</div>`;
 }
 
 function renderDateCards() {
@@ -193,21 +189,6 @@ document.querySelectorAll(".segment").forEach((button) => {
 });
 
 els.groupSelect.addEventListener("change", (event) => renderStandings(event.target.value));
-
-els.saveNoteButton.addEventListener("click", () => {
-  const title = els.noteTitle.value.trim();
-  const body = els.noteBody.value.trim();
-  if (!title || !body) return;
-  currentDay().moments.unshift({
-    time: els.noteTime.value || "--:--",
-    title,
-    body,
-    match: "手动记录"
-  });
-  els.noteTitle.value = "";
-  els.noteBody.value = "";
-  renderMoments();
-});
 
 els.exportButton.addEventListener("click", () => {
   const blob = new Blob([JSON.stringify(boardState.data, null, 2)], { type: "application/json" });
