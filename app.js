@@ -1,9 +1,3 @@
-const boardState = {
-  date: "2026-06-12",
-  filter: "all",
-  data: JSON.parse(JSON.stringify(window.WORLD_CUP_BOARD_DATA))
-};
-
 const statusLabel = {
   finished: "已完赛",
   live: "进行中",
@@ -89,6 +83,14 @@ const confirmedKickoffTimes = {
   "cod-uzb": "6/28 07:30"
 };
 
+const boardData = normalizeDataByBeijingDate(JSON.parse(JSON.stringify(window.WORLD_CUP_BOARD_DATA)));
+
+const boardState = {
+  date: selectDefaultDate(boardData),
+  filter: "all",
+  data: boardData
+};
+
 const els = {
   dateline: document.querySelector("#dateline"),
   updateTime: document.querySelector("#updateTime"),
@@ -108,6 +110,100 @@ const els = {
   momentCount: document.querySelector("#momentCount"),
   calendarStrip: document.querySelector("#calendarStrip")
 };
+
+function normalizeDataByBeijingDate(data) {
+  const normalizedDays = {};
+
+  Object.entries(data.days || {}).forEach(([sourceDate, day]) => {
+    ensureNormalizedDay(normalizedDays, sourceDate, day);
+
+    (day.matches || []).forEach((match) => {
+      const beijingDate = beijingDateForMatch(sourceDate, match);
+      const targetDay = ensureNormalizedDay(normalizedDays, beijingDate, {
+        label: formatDateLabel(beijingDate),
+        tag: day.tag
+      });
+      targetDay.matches.push(match);
+    });
+
+    if (Object.keys(day.standings || {}).length || (day.moments || []).length) {
+      const targetDay = ensureNormalizedDay(normalizedDays, sourceDate, day);
+      targetDay.standings = day.standings || targetDay.standings;
+      targetDay.moments = day.moments || targetDay.moments;
+    }
+  });
+
+  data.days = Object.fromEntries(
+    Object.entries(normalizedDays)
+      .map(([date, day]) => [date, {
+        ...day,
+        matches: (day.matches || []).sort(compareMatchesByBeijingTime)
+      }])
+      .filter(([, day]) => (day.matches || []).length || (day.moments || []).length || Object.keys(day.standings || {}).length)
+      .sort(([a], [b]) => a.localeCompare(b))
+  );
+  return data;
+}
+
+function ensureNormalizedDay(days, date, source = {}) {
+  days[date] ||= {
+    label: source.label || formatDateLabel(date),
+    tag: source.tag || "小组赛",
+    matches: [],
+    standings: {},
+    moments: []
+  };
+  return days[date];
+}
+
+function beijingDateForMatch(sourceDate, match) {
+  const minute = matchMinute(match);
+  const parsed = /^(\d{1,2})\/(\d{1,2})\s+\d{1,2}:\d{2}$/.exec(minute);
+  if (!parsed) return sourceDate;
+  const sourceYear = sourceDate.split("-")[0];
+  return `${sourceYear}-${parsed[1].padStart(2, "0")}-${parsed[2].padStart(2, "0")}`;
+}
+
+function compareMatchesByBeijingTime(a, b) {
+  return timeSortValue(matchMinute(a)) - timeSortValue(matchMinute(b));
+}
+
+function timeSortValue(value) {
+  const parsed = /^\d{1,2}\/\d{1,2}\s+(\d{1,2}):(\d{2})$/.exec(value);
+  if (!parsed) return value === "待定" ? 9999 : 0;
+  return Number(parsed[1]) * 60 + Number(parsed[2]);
+}
+
+function formatDateLabel(date) {
+  const [, month, day] = date.split("-");
+  return `${Number(month)}月${Number(day)}日`;
+}
+
+function beijingToday() {
+  const parts = new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(new Date()).reduce((acc, part) => {
+    acc[part.type] = part.value;
+    return acc;
+  }, {});
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+function selectDefaultDate(data) {
+  const dates = Object.keys(data.days || {}).sort();
+  const today = beijingToday();
+  if (dates.includes(today) && confirmedMatches(data.days[today]).length) return today;
+
+  const previous = dates
+    .filter((date) => date < today && confirmedMatches(data.days[date]).length)
+    .at(-1);
+  if (previous) return previous;
+
+  return dates.find((date) => confirmedMatches(data.days[date]).length) || dates[0] || today;
+}
 
 function currentDay() {
   return boardState.data.days[boardState.date] || { matches: [], moments: [], standings: {} };
