@@ -175,6 +175,12 @@ h2 {
   min-height: var(--board-panel-height);
 }
 
+.moments-panel {
+  height: var(--board-panel-height);
+  max-height: var(--board-panel-height);
+  overflow: hidden;
+}
+
 .center-stack {
   min-height: var(--board-panel-height);
 }
@@ -400,7 +406,10 @@ select {
 }
 
 .moment-feed {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .moment {
@@ -528,6 +537,11 @@ code {
 
   .panel-heading {
     display: grid;
+  }
+
+  .moments-panel {
+    height: min(620px, 72vh);
+    max-height: min(620px, 72vh);
   }
 
   .match-row {
