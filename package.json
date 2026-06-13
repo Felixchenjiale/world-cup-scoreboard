@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "update": "node scripts/update-schedule.mjs && node scripts/update-results.mjs",
+    "update-and-push": "node scripts/update-and-push.mjs"
+  },
+  "devDependencies": {}
+}
