@@ -1,13 +1,13 @@
 window.WORLD_CUP_BOARD_DATA = {
   "meta": {
     "tournament": "2026 世界杯",
-    "mode": "公开来源更新",
-    "updatedAt": "2026-06-13 13:30"
+    "mode": "自动赛程更新",
+    "updatedAt": "2026-06-13 10:21"
   },
   "days": {
     "2026-06-12": {
       "label": "6月12日",
-      "tag": "已赛",
+      "tag": "小组赛",
       "matches": [
         {
           "id": "mex-rsa",
