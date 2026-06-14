@@ -2,7 +2,7 @@ window.WORLD_CUP_BOARD_DATA = {
   "meta": {
     "tournament": "2026 世界杯",
     "mode": "自动赛程更新",
-    "updatedAt": "2026-06-13 10:21"
+    "updatedAt": "2026-06-14 10:01"
   },
   "days": {
     "2026-06-12": {
@@ -172,20 +172,20 @@ window.WORLD_CUP_BOARD_DATA = {
         {
           "id": "hai-sco",
           "group": "C组",
-          "status": "scheduled",
-          "minute": "6/14 09:00",
+          "status": "live",
+          "minute": "28'",
           "home": {
             "code": "HAI",
             "name": "海地",
-            "score": null
+            "score": 0
           },
           "away": {
             "code": "SCO",
             "name": "苏格兰",
-            "score": null
+            "score": 1
           },
           "venue": "波士顿",
-          "note": "C组首轮，苏格兰重返世界杯舞台，对阵海地。",
+          "note": "更新于北京时间 10:01，苏格兰在第28分钟由麦金门前补射破门，暂时 1 比 0 领先；海地开局反击很有威胁，麦克托米奈第17分钟还曾击中立柱。",
           "stats": []
         },
         {
@@ -210,39 +210,39 @@ window.WORLD_CUP_BOARD_DATA = {
         {
           "id": "bra-mar",
           "group": "C组",
-          "status": "scheduled",
-          "minute": "6/14 06:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "BRA",
             "name": "巴西",
-            "score": null
+            "score": 1
           },
           "away": {
             "code": "MAR",
             "name": "摩洛哥",
-            "score": null
+            "score": 1
           },
           "venue": "纽约/新泽西",
-          "note": "巴西首秀对阵摩洛哥，是本轮最受关注的强强对话之一。",
+          "note": "摩洛哥第21分钟由赛巴里挑射先声夺人，维尼修斯第32分钟扳平；巴西下半场加强压迫仍未能反超，双方 1 比 1 握手言和。",
           "stats": []
         },
         {
           "id": "qat-sui",
           "group": "B组",
-          "status": "scheduled",
-          "minute": "6/14 03:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "QAT",
             "name": "卡塔尔",
-            "score": null
+            "score": 1
           },
           "away": {
             "code": "SUI",
             "name": "瑞士",
-            "score": null
+            "score": 1
           },
           "venue": "旧金山湾区",
-          "note": "B组首轮，瑞士面对卡塔尔。",
+          "note": "恩博洛第17分钟点球为瑞士领先，卡塔尔门将阿布纳达多次救险；补时第5分钟库基头槌绝平，卡塔尔收获队史首个男足世界杯积分。",
           "stats": []
         }
       ],
@@ -268,41 +268,41 @@ window.WORLD_CUP_BOARD_DATA = {
           },
           {
             "team": "瑞士",
-            "played": 0,
+            "played": 1,
             "win": 0,
-            "draw": 0,
+            "draw": 1,
             "loss": 0,
             "gd": 0,
-            "pts": 0
+            "pts": 1
           },
           {
             "team": "卡塔尔",
-            "played": 0,
+            "played": 1,
             "win": 0,
-            "draw": 0,
+            "draw": 1,
             "loss": 0,
             "gd": 0,
-            "pts": 0
+            "pts": 1
           }
         ],
         "C组": [
           {
             "team": "巴西",
-            "played": 0,
+            "played": 1,
             "win": 0,
-            "draw": 0,
+            "draw": 1,
             "loss": 0,
             "gd": 0,
-            "pts": 0
+            "pts": 1
           },
           {
             "team": "摩洛哥",
-            "played": 0,
+            "played": 1,
             "win": 0,
-            "draw": 0,
+            "draw": 1,
             "loss": 0,
             "gd": 0,
-            "pts": 0
+            "pts": 1
           },
           {
             "team": "海地",
@@ -334,7 +334,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "pts": 3
           },
           {
-            "team": "澳大利亚",
+            "team": "土耳其",
             "played": 0,
             "win": 0,
             "draw": 0,
@@ -343,7 +343,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "pts": 0
           },
           {
-            "team": "土耳其",
+            "team": "澳大利亚",
             "played": 0,
             "win": 0,
             "draw": 0,
@@ -500,8 +500,160 @@ window.WORLD_CUP_BOARD_DATA = {
           "stats": []
         }
       ],
-      "standings": {},
-      "moments": []
+      "standings": {
+        "B组": [
+          {
+            "team": "加拿大",
+            "played": 1,
+            "win": 0,
+            "draw": 1,
+            "loss": 0,
+            "gd": 0,
+            "pts": 1
+          },
+          {
+            "team": "波黑",
+            "played": 1,
+            "win": 0,
+            "draw": 1,
+            "loss": 0,
+            "gd": 0,
+            "pts": 1
+          },
+          {
+            "team": "卡塔尔",
+            "played": 1,
+            "win": 0,
+            "draw": 1,
+            "loss": 0,
+            "gd": 0,
+            "pts": 1
+          },
+          {
+            "team": "瑞士",
+            "played": 1,
+            "win": 0,
+            "draw": 1,
+            "loss": 0,
+            "gd": 0,
+            "pts": 1
+          }
+        ],
+        "C组": [
+          {
+            "team": "巴西",
+            "played": 1,
+            "win": 0,
+            "draw": 1,
+            "loss": 0,
+            "gd": 0,
+            "pts": 1
+          },
+          {
+            "team": "摩洛哥",
+            "played": 1,
+            "win": 0,
+            "draw": 1,
+            "loss": 0,
+            "gd": 0,
+            "pts": 1
+          },
+          {
+            "team": "海地",
+            "played": 0,
+            "win": 0,
+            "draw": 0,
+            "loss": 0,
+            "gd": 0,
+            "pts": 0
+          },
+          {
+            "team": "苏格兰",
+            "played": 0,
+            "win": 0,
+            "draw": 0,
+            "loss": 0,
+            "gd": 0,
+            "pts": 0
+          }
+        ],
+        "D组": [
+          {
+            "team": "美国",
+            "played": 1,
+            "win": 1,
+            "draw": 0,
+            "loss": 0,
+            "gd": 3,
+            "pts": 3
+          },
+          {
+            "team": "土耳其",
+            "played": 0,
+            "win": 0,
+            "draw": 0,
+            "loss": 0,
+            "gd": 0,
+            "pts": 0
+          },
+          {
+            "team": "澳大利亚",
+            "played": 0,
+            "win": 0,
+            "draw": 0,
+            "loss": 0,
+            "gd": 0,
+            "pts": 0
+          },
+          {
+            "team": "巴拉圭",
+            "played": 1,
+            "win": 0,
+            "draw": 0,
+            "loss": 1,
+            "gd": -3,
+            "pts": 0
+          }
+        ]
+      },
+      "moments": [
+        {
+          "time": "17'",
+          "title": "恩博洛点射打破僵局",
+          "body": "瑞士在开场阶段通过点球取得领先，但并没有把优势扩大。",
+          "match": "卡塔尔 1-1 瑞士"
+        },
+        {
+          "time": "90+5'",
+          "title": "库基头槌写下卡塔尔新历史",
+          "body": "霍曼-艾哈迈德补时送出传中，库基后点甩头绝平，卡塔尔拿到队史首个男足世界杯积分。",
+          "match": "卡塔尔 1-1 瑞士"
+        },
+        {
+          "time": "21'",
+          "title": "赛巴里挑射让巴西先失守",
+          "body": "摩洛哥利用快速反击撕开巴西防线，赛巴里冷静挑射破门。",
+          "match": "巴西 1-1 摩洛哥"
+        },
+        {
+          "time": "32'",
+          "title": "维尼修斯用个人能力扳平",
+          "body": "巴西边锋在禁区前沿果断起脚，把比分追成 1 比 1。",
+          "match": "巴西 1-1 摩洛哥"
+        },
+        {
+          "time": "17'",
+          "title": "麦克托米奈中柱预示苏格兰压力",
+          "body": "苏格兰早段已连续制造威胁，麦克托米奈的弧线球击中立柱弹出。",
+          "match": "海地 0-1 苏格兰"
+        },
+        {
+          "time": "28'",
+          "title": "麦金门前补射让苏格兰领跑",
+          "body": "切-亚当斯右路低传制造混乱，麦金跟进补射得手，苏格兰实时积分榜上升到小组第一。",
+          "match": "海地 0-1 苏格兰"
+        }
+      ]
     },
     "2026-06-15": {
       "label": "6月15日",
