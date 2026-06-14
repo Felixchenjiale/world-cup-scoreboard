@@ -88,6 +88,7 @@ const boardData = normalizeDataByBeijingDate(JSON.parse(JSON.stringify(window.WO
 const boardState = {
   date: selectDefaultDate(boardData),
   filter: "all",
+  group: null,
   data: boardData
 };
 
@@ -209,6 +210,58 @@ function currentDay() {
   return boardState.data.days[boardState.date] || { matches: [], moments: [], standings: {} };
 }
 
+function allGroupNames() {
+  const groups = new Set();
+  Object.values(boardState.data.days || {}).forEach((day) => {
+    Object.keys(day.standings || {}).forEach((group) => groups.add(group));
+    (day.matches || []).forEach((match) => {
+      if (match.group) groups.add(match.group);
+    });
+  });
+  return Array.from(groups).sort(compareGroupName);
+}
+
+function compareGroupName(a, b) {
+  return groupSortValue(a) - groupSortValue(b) || a.localeCompare(b, "zh-Hans-CN");
+}
+
+function groupSortValue(group) {
+  const letter = /^([A-Z])组$/.exec(group);
+  if (letter) return letter[1].charCodeAt(0) - 65;
+  return 999;
+}
+
+function standingsForGroup(group) {
+  const dates = Object.keys(boardState.data.days || {}).sort();
+  const latestRows = dates.reduce((rows, date) => {
+    if (date > boardState.date) return rows;
+    const nextRows = boardState.data.days[date]?.standings?.[group];
+    return nextRows?.length ? nextRows : rows;
+  }, null);
+
+  return latestRows || seedStandingsForGroup(group);
+}
+
+function seedStandingsForGroup(group) {
+  const teams = new Map();
+  Object.values(boardState.data.days || {}).forEach((day) => {
+    (day.matches || []).forEach((match) => {
+      if (match.group !== group) return;
+      teams.set(match.home.name, match.home.name);
+      teams.set(match.away.name, match.away.name);
+    });
+  });
+  return Array.from(teams.values()).map((team) => ({
+    team,
+    played: 0,
+    win: 0,
+    draw: 0,
+    loss: 0,
+    gd: 0,
+    pts: 0
+  }));
+}
+
 function matchMinute(match) {
   return confirmedKickoffTimes[match.id] || match.minute;
 }
@@ -303,14 +356,16 @@ function renderFeature(match = currentDay().matches[0]) {
 }
 
 function renderGroups() {
-  const groups = Object.keys(currentDay().standings || {});
+  const groups = allGroupNames();
   els.groupSelect.innerHTML = groups.map((group) => `<option value="${group}">${group}</option>`).join("");
-  const selected = els.groupSelect.value || groups[0];
+  const selected = groups.includes(boardState.group) ? boardState.group : groups[0];
+  els.groupSelect.value = selected;
+  boardState.group = selected;
   renderStandings(selected);
 }
 
 function renderStandings(group) {
-  const rows = (currentDay().standings || {})[group] || [];
+  const rows = standingsForGroup(group);
   els.standings.innerHTML = rows.length
     ? `<div class="standing-row header"><span>球队</span><span>赛</span><span>净胜</span><span>分</span></div>` +
       rows.map((team, index) => `
@@ -385,6 +440,9 @@ document.querySelectorAll(".segment").forEach((button) => {
   });
 });
 
-els.groupSelect.addEventListener("change", (event) => renderStandings(event.target.value));
+els.groupSelect.addEventListener("change", (event) => {
+  boardState.group = event.target.value;
+  renderStandings(event.target.value);
+});
 
 renderAll();
