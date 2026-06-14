@@ -2,7 +2,7 @@ window.WORLD_CUP_BOARD_DATA = {
   "meta": {
     "tournament": "2026 世界杯",
     "mode": "自动赛程更新",
-    "updatedAt": "2026-06-13 10:21"
+    "updatedAt": "2026-06-14 15:12"
   },
   "days": {
     "2026-06-12": {
@@ -172,8 +172,8 @@ window.WORLD_CUP_BOARD_DATA = {
         {
           "id": "hai-sco",
           "group": "C组",
-          "status": "live",
-          "minute": "28'",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "HAI",
             "name": "海地",
@@ -185,26 +185,26 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": 1
           },
           "venue": "波士顿",
-          "note": "更新于北京时间 10:01，苏格兰在第28分钟由麦金门前补射破门，暂时 1 比 0 领先；海地开局反击很有威胁，麦克托米奈第17分钟还曾击中立柱。",
+          "note": "苏格兰凭借麦金第28分钟门前补射 1 比 0 击败海地，拿下球队自 1990 年以来首场男足世界杯胜利；海地末段持续施压，但未能攻破苏格兰防线。",
           "stats": []
         },
         {
           "id": "aus-tur",
           "group": "D组",
-          "status": "scheduled",
-          "minute": "6/14 12:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "AUS",
             "name": "澳大利亚",
-            "score": null
+            "score": 2
           },
           "away": {
             "code": "TUR",
             "name": "土耳其",
-            "score": null
+            "score": 0
           },
           "venue": "温哥华",
-          "note": "D组首轮，澳大利亚与土耳其争夺开局主动权。",
+          "note": "澳大利亚顶住土耳其全场高压，伊兰昆达第27分钟单刀首开纪录，梅特卡夫第75分钟左脚低射再下一城，最终 2 比 0 爆冷取胜。",
           "stats": []
         },
         {
@@ -267,7 +267,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "pts": 1
           },
           {
-            "team": "瑞士",
+            "team": "卡塔尔",
             "played": 1,
             "win": 0,
             "draw": 1,
@@ -276,7 +276,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "pts": 1
           },
           {
-            "team": "卡塔尔",
+            "team": "瑞士",
             "played": 1,
             "win": 0,
             "draw": 1,
@@ -286,6 +286,15 @@ window.WORLD_CUP_BOARD_DATA = {
           }
         ],
         "C组": [
+          {
+            "team": "苏格兰",
+            "played": 1,
+            "win": 1,
+            "draw": 0,
+            "loss": 0,
+            "gd": 1,
+            "pts": 3
+          },
           {
             "team": "巴西",
             "played": 1,
@@ -306,20 +315,11 @@ window.WORLD_CUP_BOARD_DATA = {
           },
           {
             "team": "海地",
-            "played": 0,
+            "played": 1,
             "win": 0,
             "draw": 0,
-            "loss": 0,
-            "gd": 0,
-            "pts": 0
-          },
-          {
-            "team": "苏格兰",
-            "played": 0,
-            "win": 0,
-            "draw": 0,
-            "loss": 0,
-            "gd": 0,
+            "loss": 1,
+            "gd": -1,
             "pts": 0
           }
         ],
@@ -334,21 +334,21 @@ window.WORLD_CUP_BOARD_DATA = {
             "pts": 3
           },
           {
-            "team": "土耳其",
-            "played": 0,
-            "win": 0,
+            "team": "澳大利亚",
+            "played": 1,
+            "win": 1,
             "draw": 0,
             "loss": 0,
-            "gd": 0,
-            "pts": 0
+            "gd": 2,
+            "pts": 3
           },
           {
-            "team": "澳大利亚",
-            "played": 0,
+            "team": "土耳其",
+            "played": 1,
             "win": 0,
             "draw": 0,
-            "loss": 0,
-            "gd": 0,
+            "loss": 1,
+            "gd": -2,
             "pts": 0
           },
           {
@@ -400,22 +400,52 @@ window.WORLD_CUP_BOARD_DATA = {
           "match": "美国 4-1 巴拉圭"
         },
         {
-          "time": "50'",
-          "title": "VAR改判阿尔米隆假摔染黄",
-          "body": "主裁最初向里姆出示黄牌，回看后改判阿尔米隆假摔，关键判罚没有让巴拉圭拿到点球机会。",
-          "match": "美国 4-1 巴拉圭"
-        },
-        {
-          "time": "73'",
-          "title": "毛里西奥替巴拉圭追回一球",
-          "body": "巴拉圭利用美国防线一次松动由毛里西奥破门，但没能扭转比赛走势。",
-          "match": "美国 4-1 巴拉圭"
-        },
-        {
-          "time": "90+7'",
+          "time": "90+8'",
           "title": "雷纳补时外脚背兜射锁定大胜",
           "body": "美国补时阶段连续传递撕开防线，雷纳带一步后用外脚背弧线球兜入远角，把比分定格为 4 比 1。",
           "match": "美国 4-1 巴拉圭"
+        },
+        {
+          "time": "17'",
+          "title": "恩博洛点射打破僵局",
+          "body": "瑞士在开场阶段通过点球取得领先，但没能就此杀死比赛。",
+          "match": "卡塔尔 1-1 瑞士"
+        },
+        {
+          "time": "90+5'",
+          "title": "库基头槌写下卡塔尔新历史",
+          "body": "霍曼-艾哈迈德补时送出传中，库基后点甩头绝平，卡塔尔拿到队史首个男足世界杯积分。",
+          "match": "卡塔尔 1-1 瑞士"
+        },
+        {
+          "time": "21'",
+          "title": "赛巴里挑射让巴西先失守",
+          "body": "摩洛哥利用快速反击撕开巴西防线，赛巴里冷静挑射破门。",
+          "match": "巴西 1-1 摩洛哥"
+        },
+        {
+          "time": "32'",
+          "title": "维尼修斯用个人能力扳平",
+          "body": "巴西边锋在禁区内调整一步后低射入网，把比分追成 1 比 1。",
+          "match": "巴西 1-1 摩洛哥"
+        },
+        {
+          "time": "28'",
+          "title": "麦金补射带来苏格兰久违三分",
+          "body": "切-亚当斯右路低传制造混乱，麦金跟进补射得手，苏格兰拿到 36 年来首场世界杯胜利。",
+          "match": "海地 0-1 苏格兰"
+        },
+        {
+          "time": "27'",
+          "title": "伊兰昆达反击单骑闯关破门",
+          "body": "保罗-奥孔-恩格斯特勒送出直传后，伊兰昆达摆脱两名后卫冷静推射，澳大利亚率先打破僵局。",
+          "match": "澳大利亚 2-0 土耳其"
+        },
+        {
+          "time": "75'",
+          "title": "梅特卡夫远射封住土耳其反扑",
+          "body": "土耳其久攻不下后被澳大利亚再次打穿，梅特卡夫禁区前沿起脚把比分定格在 2 比 0。",
+          "match": "澳大利亚 2-0 土耳其"
         }
       ]
     },
@@ -541,6 +571,15 @@ window.WORLD_CUP_BOARD_DATA = {
         ],
         "C组": [
           {
+            "team": "苏格兰",
+            "played": 1,
+            "win": 1,
+            "draw": 0,
+            "loss": 0,
+            "gd": 1,
+            "pts": 3
+          },
+          {
             "team": "巴西",
             "played": 1,
             "win": 0,
@@ -560,20 +599,11 @@ window.WORLD_CUP_BOARD_DATA = {
           },
           {
             "team": "海地",
-            "played": 0,
+            "played": 1,
             "win": 0,
             "draw": 0,
-            "loss": 0,
-            "gd": 0,
-            "pts": 0
-          },
-          {
-            "team": "苏格兰",
-            "played": 0,
-            "win": 0,
-            "draw": 0,
-            "loss": 0,
-            "gd": 0,
+            "loss": 1,
+            "gd": -1,
             "pts": 0
           }
         ],
@@ -588,21 +618,21 @@ window.WORLD_CUP_BOARD_DATA = {
             "pts": 3
           },
           {
-            "team": "土耳其",
-            "played": 0,
-            "win": 0,
+            "team": "澳大利亚",
+            "played": 1,
+            "win": 1,
             "draw": 0,
             "loss": 0,
-            "gd": 0,
-            "pts": 0
+            "gd": 2,
+            "pts": 3
           },
           {
-            "team": "澳大利亚",
-            "played": 0,
+            "team": "土耳其",
+            "played": 1,
             "win": 0,
             "draw": 0,
-            "loss": 0,
-            "gd": 0,
+            "loss": 1,
+            "gd": -2,
             "pts": 0
           },
           {
@@ -652,6 +682,24 @@ window.WORLD_CUP_BOARD_DATA = {
           "title": "麦金门前补射让苏格兰领跑",
           "body": "切-亚当斯右路低传制造混乱，麦金跟进补射得手，苏格兰实时积分榜上升到小组第一。",
           "match": "海地 0-1 苏格兰"
+        },
+        {
+          "time": "27'",
+          "title": "伊兰昆达反击单刀点燃澳大利亚",
+          "body": "奥孔-恩格斯特勒挑传打穿防线，伊兰昆达停球后冷静推射，澳大利亚在温哥华先声夺人。",
+          "match": "澳大利亚 2-0 土耳其"
+        },
+        {
+          "time": "75'",
+          "title": "梅特卡夫贴地斩扩大优势",
+          "body": "澳大利亚后场解围后直接形成转换，梅特卡夫带到弧顶左脚低射钻入立柱内侧，把比分改写为 2 比 0。",
+          "match": "澳大利亚 2-0 土耳其"
+        },
+        {
+          "time": "86'",
+          "title": "比奇扑出恰尔汗奥卢任意球",
+          "body": "土耳其终场前连续围攻，年轻门将比奇再次侧扑化解低平任意球，帮助澳大利亚保住零封。",
+          "match": "澳大利亚 2-0 土耳其"
         }
       ]
     },
@@ -759,7 +807,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "纽约/新泽西",
-          "note": "法国首战对阵塞内加尔。",
+          "note": "I组首轮，法国对阵塞内加尔。",
           "stats": []
         },
         {
@@ -797,7 +845,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "堪萨斯城",
-          "note": "卫冕冠军阿根廷迎来小组赛首秀。",
+          "note": "J组首轮，阿根廷对阵阿尔及利亚。",
           "stats": []
         },
         {
@@ -816,7 +864,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "旧金山湾区",
-          "note": "奥地利对阵约旦，J组首轮继续展开。",
+          "note": "J组首轮，奥地利对阵约旦。",
           "stats": []
         }
       ],
@@ -862,7 +910,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "达拉斯",
-          "note": "英格兰小组赛首战迎来克罗地亚。",
+          "note": "L组首轮，英格兰对阵克罗地亚。",
           "stats": []
         },
         {
@@ -900,7 +948,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "墨西哥城",
-          "note": "乌兹别克斯坦首战面对哥伦比亚。",
+          "note": "K组首轮，乌兹别克斯坦对阵哥伦比亚。",
           "stats": []
         }
       ],
@@ -965,7 +1013,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "温哥华",
-          "note": "加拿大第二场小组赛面对卡塔尔。",
+          "note": "B组第二轮，加拿大对阵卡塔尔。",
           "stats": []
         },
         {
@@ -984,7 +1032,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "瓜达拉哈拉",
-          "note": "A组焦点战，墨西哥对阵韩国。",
+          "note": "A组第二轮，墨西哥对阵韩国。",
           "stats": []
         }
       ],
@@ -1030,7 +1078,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "波士顿",
-          "note": "苏格兰与摩洛哥再度在世界杯舞台相遇。",
+          "note": "C组第二轮，苏格兰对阵摩洛哥。",
           "stats": []
         },
         {
@@ -1068,7 +1116,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "西雅图",
-          "note": "美国第二场小组赛面对澳大利亚。",
+          "note": "D组第二轮，美国对阵澳大利亚。",
           "stats": []
         }
       ],
