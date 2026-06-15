@@ -2,7 +2,7 @@ window.WORLD_CUP_BOARD_DATA = {
   "meta": {
     "tournament": "2026 世界杯",
     "mode": "自动赛程更新",
-    "updatedAt": "2026-06-13 10:21"
+    "updatedAt": "2026-06-15 14:36"
   },
   "days": {
     "2026-06-12": {
@@ -531,20 +531,20 @@ window.WORLD_CUP_BOARD_DATA = {
         {
           "id": "swe-tun",
           "group": "F组",
-          "status": "scheduled",
-          "minute": "6/15 10:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "SWE",
             "name": "瑞典",
-            "score": null
+            "score": 5
           },
           "away": {
             "code": "TUN",
             "name": "突尼斯",
-            "score": null
+            "score": 1
           },
           "venue": "蒙特雷",
-          "note": "F组另一场首轮较量，荷兰与日本稍早 2 比 2 战平后，瑞典和突尼斯都希望抢下关键三分。",
+          "note": "瑞典在 F 组首轮高效把握突尼斯后场失误，亚辛·阿亚里上半场先拔头筹并在补时梅开二度，伊萨克、约克雷斯和斯万贝里也各入一球；突尼斯仅由雷基克第43分钟头球追回一分，最终 1 比 5 惨败。",
           "stats": []
         }
       ],
@@ -589,6 +589,15 @@ window.WORLD_CUP_BOARD_DATA = {
         ],
         "F组": [
           {
+            "team": "瑞典",
+            "played": 1,
+            "win": 1,
+            "draw": 0,
+            "loss": 0,
+            "gd": 4,
+            "pts": 3
+          },
+          {
             "team": "荷兰",
             "played": 1,
             "win": 0,
@@ -607,21 +616,12 @@ window.WORLD_CUP_BOARD_DATA = {
             "pts": 1
           },
           {
-            "team": "瑞典",
-            "played": 0,
-            "win": 0,
-            "draw": 0,
-            "loss": 0,
-            "gd": 0,
-            "pts": 0
-          },
-          {
             "team": "突尼斯",
-            "played": 0,
+            "played": 1,
             "win": 0,
             "draw": 0,
-            "loss": 0,
-            "gd": 0,
+            "loss": 1,
+            "gd": -4,
             "pts": 0
           }
         ]
@@ -668,6 +668,42 @@ window.WORLD_CUP_BOARD_DATA = {
           "title": "阿马德·迪亚洛最后一击绝杀",
           "body": "辛戈右路横传到弧顶，阿马德稍作调整后左脚搓射破门，科特迪瓦压哨拿下厄瓜多尔。",
           "match": "科特迪瓦 1-0 厄瓜多尔"
+        },
+        {
+          "time": "7'",
+          "title": "阿亚里远射点燃瑞典开局",
+          "body": "突尼斯门将出击解围不远，阿亚里弧顶外迎球抽射入网，瑞典在开场阶段就把比赛拉到自己的节奏里。",
+          "match": "瑞典 5-1 突尼斯"
+        },
+        {
+          "time": "30'",
+          "title": "伊萨克内切低射把优势扩大",
+          "body": "瑞典反击中连续两脚传递打穿防线，伊萨克左路带入禁区后兜射远角得手，比分来到 2 比 0。",
+          "match": "瑞典 5-1 突尼斯"
+        },
+        {
+          "time": "43'",
+          "title": "雷基克头球让突尼斯看到希望",
+          "body": "汉尼拔二次进攻送出传中，雷基克前点甩头破门，突尼斯在半场前把差距缩小到一球。",
+          "match": "瑞典 5-1 突尼斯"
+        },
+        {
+          "time": "60'",
+          "title": "约克雷斯吃下伊萨克高位反抢红利",
+          "body": "突尼斯后场再次失误，伊萨克断球后横传，约克雷斯顺势低射命中，瑞典重新把领先拉回到两球。",
+          "match": "瑞典 5-1 突尼斯"
+        },
+        {
+          "time": "86'",
+          "title": "斯万贝里替补建功杀死比赛",
+          "body": "瑞典定位球制造禁区混乱，刚刚登场的斯万贝里门前扫射破门，VAR 复核后确认进球有效。",
+          "match": "瑞典 5-1 突尼斯"
+        },
+        {
+          "time": "90+6'",
+          "title": "阿亚里补时远射完成双响",
+          "body": "突尼斯最后时刻再度传球失误，阿亚里在禁区前沿抓住空当轰入个人第二球，把比分定格在 5 比 1。",
+          "match": "瑞典 5-1 突尼斯"
         }
       ]
     },
@@ -981,7 +1017,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "温哥华",
-          "note": "加拿大第二场小组赛面对卡塔尔。",
+          "note": "B组第二轮，加拿大对阵卡塔尔。",
           "stats": []
         },
         {
@@ -1000,7 +1036,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "瓜达拉哈拉",
-          "note": "A组焦点战，墨西哥对阵韩国。",
+          "note": "A组第二轮，墨西哥对阵韩国。",
           "stats": []
         }
       ],
@@ -1046,7 +1082,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "波士顿",
-          "note": "苏格兰与摩洛哥再度在世界杯舞台相遇。",
+          "note": "C组第二轮，苏格兰对阵摩洛哥。",
           "stats": []
         },
         {
@@ -1084,7 +1120,7 @@ window.WORLD_CUP_BOARD_DATA = {
             "score": null
           },
           "venue": "西雅图",
-          "note": "美国第二场小组赛面对澳大利亚。",
+          "note": "D组第二轮，美国对阵澳大利亚。",
           "stats": []
         }
       ],
