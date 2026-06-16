@@ -110,4 +110,14 @@
       match: "伊朗 2-2 新西兰"
     }
   ];
+
+  const beijingDay = board.days["2026-06-16"] ||= {
+    label: "6月16日",
+    tag: "小组赛",
+    matches: [],
+    standings: {},
+    moments: []
+  };
+  beijingDay.standings = day.standings;
+  beijingDay.moments = day.moments;
 })();
