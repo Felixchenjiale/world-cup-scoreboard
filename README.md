@@ -24,7 +24,7 @@
 - `scripts/update-schedule.mjs`：更新世界杯赛程、北京时间、球队、场馆和小组。
 - `scripts/update-results.mjs`：更新比分、比赛状态、比赛时间、统计和精彩瞬间。
 
-GitHub Actions 会在北京时间每天 09:00 和 13:30 自动运行：
+GitHub Actions 会在北京时间每天 00:00 自动运行一次：
 
 - `.github/workflows/update-world-cup-data.yml`
 
@@ -34,6 +34,8 @@ GitHub Actions 会在北京时间每天 09:00 和 13:30 自动运行：
 - `RESULTS_SOURCE_URL`：赛果 JSON 数据源。
 
 如果暂时没有配置数据源，脚本会跳过，不会改动页面。
+
+本地 `npm run update-and-push` 默认只更新并提交 `data.js`，不会主动推送 GitHub；定时推送交给 GitHub Actions 处理。
 
 赛程数据源支持这种结构：
 
