@@ -3,9 +3,8 @@ name: Update World Cup Data
 on:
   workflow_dispatch:
   schedule:
-    # Beijing 09:00 and 13:30
-    - cron: "0 1 * * *"
-    - cron: "30 5 * * *"
+    # Beijing 00:00
+    - cron: "0 16 * * *"
 
 permissions:
   contents: write
