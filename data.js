@@ -2,7 +2,7 @@ window.WORLD_CUP_BOARD_DATA = {
   "meta": {
     "tournament": "2026 世界杯",
     "mode": "手动核对赛果更新",
-    "updatedAt": "2026-06-21 00:09"
+    "updatedAt": "2026-06-22 11:56"
   },
   "days": {
     "2026-06-12": {
@@ -1958,82 +1958,208 @@ window.WORLD_CUP_BOARD_DATA = {
         {
           "id": "ned-swe",
           "group": "F组",
-          "status": "scheduled",
-          "minute": "6/21 01:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "NED",
             "name": "荷兰",
-            "score": null
+            "score": 5
           },
           "away": {
             "code": "SWE",
             "name": "瑞典",
-            "score": null
+            "score": 1
           },
           "venue": "休斯敦",
-          "note": "F组第二轮，荷兰对阵瑞典。",
+          "note": "荷兰上半场由布罗贝两度破门奠定优势，下半场加克波梅开二度、萨默维尔末段再下一城，最终 5 比 1 大胜瑞典，率先占据 F 组头名。",
           "stats": []
         },
         {
           "id": "ger-civ",
           "group": "E组",
-          "status": "scheduled",
-          "minute": "6/21 04:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "GER",
             "name": "德国",
-            "score": null
+            "score": 2
           },
           "away": {
             "code": "CIV",
             "name": "科特迪瓦",
-            "score": null
+            "score": 1
           },
           "venue": "多伦多",
-          "note": "E组第二轮，德国对阵科特迪瓦。",
+          "note": "科特迪瓦先由凯西头球破门，但德国在下半场由翁达夫扳平并在补时第 4 分钟完成绝杀，2 比 1 逆转后提前锁定出线名额。",
           "stats": []
         },
         {
           "id": "ecu-cur",
           "group": "E组",
-          "status": "scheduled",
-          "minute": "6/21 08:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "ECU",
             "name": "厄瓜多尔",
-            "score": null
+            "score": 0
           },
           "away": {
             "code": "CUW",
             "name": "库拉索",
-            "score": null
+            "score": 0
           },
           "venue": "堪萨斯城",
-          "note": "E组第二轮，厄瓜多尔对阵库拉索。",
+          "note": "厄瓜多尔全场 28 次射门仍无法攻破库拉索球门，门将鲁姆做出 15 次扑救，帮助库拉索拿到队史世界杯首个积分，双方 0 比 0 战平。",
           "stats": []
         },
         {
           "id": "tun-jpn",
           "group": "F组",
-          "status": "scheduled",
-          "minute": "6/21 12:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "TUN",
             "name": "突尼斯",
-            "score": null
+            "score": 0
           },
           "away": {
             "code": "JPN",
             "name": "日本",
-            "score": null
+            "score": 4
           },
           "venue": "蒙特雷",
-          "note": "F组第二轮，突尼斯对阵日本。",
+          "note": "镰田大地开场 4 分钟闪击，随后上田绮世梅开二度、伊东纯也也有进球，日本 4 比 0 横扫突尼斯并提前晋级 32 强。",
           "stats": []
         }
       ],
-      "standings": {},
-      "moments": []
+      "standings": {
+        "E组": [
+          {
+            "team": "德国",
+            "played": 2,
+            "win": 2,
+            "draw": 0,
+            "loss": 0,
+            "gd": 7,
+            "pts": 6
+          },
+          {
+            "team": "科特迪瓦",
+            "played": 2,
+            "win": 1,
+            "draw": 0,
+            "loss": 1,
+            "gd": 0,
+            "pts": 3
+          },
+          {
+            "team": "厄瓜多尔",
+            "played": 2,
+            "win": 0,
+            "draw": 1,
+            "loss": 1,
+            "gd": -1,
+            "pts": 1
+          },
+          {
+            "team": "库拉索",
+            "played": 2,
+            "win": 0,
+            "draw": 1,
+            "loss": 1,
+            "gd": -6,
+            "pts": 1
+          }
+        ],
+        "F组": [
+          {
+            "team": "荷兰",
+            "played": 2,
+            "win": 1,
+            "draw": 1,
+            "loss": 0,
+            "gd": 4,
+            "pts": 4
+          },
+          {
+            "team": "日本",
+            "played": 2,
+            "win": 1,
+            "draw": 1,
+            "loss": 0,
+            "gd": 4,
+            "pts": 4
+          },
+          {
+            "team": "瑞典",
+            "played": 2,
+            "win": 1,
+            "draw": 0,
+            "loss": 1,
+            "gd": 0,
+            "pts": 3
+          },
+          {
+            "team": "突尼斯",
+            "played": 2,
+            "win": 0,
+            "draw": 0,
+            "loss": 2,
+            "gd": -8,
+            "pts": 0
+          }
+        ]
+      },
+      "moments": [
+        {
+          "time": "11'",
+          "title": "布罗贝为荷兰早早破门",
+          "body": "哈托右路传中制造混战，布罗贝门前补射得手，荷兰在休斯敦迅速掌控节奏。",
+          "match": "荷兰 5-1 瑞典"
+        },
+        {
+          "time": "54'",
+          "title": "加克波两分钟内完成双响",
+          "body": "荷兰边锋连续利用反击和后点包抄得手，比赛在下半场初段就被彻底拉开。",
+          "match": "荷兰 5-1 瑞典"
+        },
+        {
+          "time": "68'",
+          "title": "翁达夫扳平救回德国",
+          "body": "德国持续压制终于兑现，翁达夫在禁区内抢点破门，把 E 组榜首战重新拉回均势。",
+          "match": "德国 2-1 科特迪瓦"
+        },
+        {
+          "time": "90+4'",
+          "title": "翁达夫补时绝杀德国出线",
+          "body": "德国最后阶段再度通过边路传中制造杀机，翁达夫完成致命一击，东道主之一提前晋级。",
+          "match": "德国 2-1 科特迪瓦"
+        },
+        {
+          "time": "90+'",
+          "title": "鲁姆 15 次扑救写下库拉索历史",
+          "body": "厄瓜多尔狂轰 28 脚依旧无功而返，库拉索门将鲁姆用高接低挡保住 0 比 0，带回队史首个世界杯积分。",
+          "match": "厄瓜多尔 0-0 库拉索"
+        },
+        {
+          "time": "4'",
+          "title": "镰田大地开场闪击",
+          "body": "日本开球后不久就打穿突尼斯防线，镰田大地的低射让比赛迅速进入蓝武士节奏。",
+          "match": "突尼斯 0-4 日本"
+        },
+        {
+          "time": "31'",
+          "title": "上田绮世扩大领先",
+          "body": "日本通过中路连续短传撕开防区，上田绮世把优势扩大到两球，突尼斯防线开始全面后撤。",
+          "match": "突尼斯 0-4 日本"
+        },
+        {
+          "time": "83'",
+          "title": "上田梅开二度锁定晋级",
+          "body": "日本末段再打出快速转换，上田绮世完成个人第二球，也把日本送进淘汰赛阶段。",
+          "match": "突尼斯 0-4 日本"
+        }
+      ]
     },
     "2026-06-22": {
       "label": "6月22日",
@@ -2042,82 +2168,208 @@ window.WORLD_CUP_BOARD_DATA = {
         {
           "id": "esp-ksa",
           "group": "H组",
-          "status": "scheduled",
-          "minute": "6/22 00:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "ESP",
             "name": "西班牙",
-            "score": null
+            "score": 4
           },
           "away": {
             "code": "KSA",
             "name": "沙特",
-            "score": null
+            "score": 0
           },
           "venue": "亚特兰大",
-          "note": "西班牙第二场小组赛面对沙特。",
+          "note": "亚马尔与奥亚萨瓦尔上半场连进两球，沙特后卫阿尔坦巴克蒂下半场自摆乌龙，奥亚萨瓦尔随后梅开二度，西班牙 4 比 0 轻取沙特后升至 H 组榜首。",
           "stats": []
         },
         {
           "id": "bel-irn",
           "group": "G组",
-          "status": "scheduled",
-          "minute": "6/22 03:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "BEL",
             "name": "比利时",
-            "score": null
+            "score": 0
           },
           "away": {
             "code": "IRN",
             "name": "伊朗",
-            "score": null
+            "score": 0
           },
           "venue": "洛杉矶",
-          "note": "G组第二轮，比利时对阵伊朗。",
+          "note": "比利时在第 68 分钟被罚下一人后仍守住平局，伊朗曾由塔雷米打进一球但因越位无效，最终双方 0 比 0 收场，G 组形势继续胶着。",
           "stats": []
         },
         {
           "id": "uru-cpv",
           "group": "H组",
-          "status": "scheduled",
-          "minute": "6/22 06:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "URU",
             "name": "乌拉圭",
-            "score": null
+            "score": 2
           },
           "away": {
             "code": "CPV",
             "name": "佛得角",
-            "score": null
+            "score": 2
           },
           "venue": "迈阿密",
-          "note": "H组第二轮，乌拉圭对阵佛得角。",
+          "note": "乌拉圭两度领先却两度被佛得角追平，巴尔韦德和阿劳霍的进球先后被罗德里格斯与塔瓦雷斯回应，双方 2 比 2 战平后都仍保有出线主动权。",
           "stats": []
         },
         {
           "id": "nzl-egy",
           "group": "G组",
-          "status": "scheduled",
-          "minute": "6/22 09:00",
+          "status": "finished",
+          "minute": "90'",
           "home": {
             "code": "NZL",
             "name": "新西兰",
-            "score": null
+            "score": 1
           },
           "away": {
             "code": "EGY",
             "name": "埃及",
-            "score": null
+            "score": 3
           },
           "venue": "温哥华",
-          "note": "G组第二轮，新西兰对阵埃及。",
+          "note": "苏尔曼头球让新西兰先声夺人，但齐佐、萨拉赫和特雷泽盖连下三城完成逆转，埃及 3 比 1 取胜后升至 G 组第一。",
           "stats": []
         }
       ],
-      "standings": {},
-      "moments": []
+      "standings": {
+        "G组": [
+          {
+            "team": "埃及",
+            "played": 2,
+            "win": 1,
+            "draw": 1,
+            "loss": 0,
+            "gd": 2,
+            "pts": 4
+          },
+          {
+            "team": "伊朗",
+            "played": 2,
+            "win": 0,
+            "draw": 2,
+            "loss": 0,
+            "gd": 0,
+            "pts": 2
+          },
+          {
+            "team": "比利时",
+            "played": 2,
+            "win": 0,
+            "draw": 2,
+            "loss": 0,
+            "gd": 0,
+            "pts": 2
+          },
+          {
+            "team": "新西兰",
+            "played": 2,
+            "win": 0,
+            "draw": 1,
+            "loss": 1,
+            "gd": -2,
+            "pts": 1
+          }
+        ],
+        "H组": [
+          {
+            "team": "西班牙",
+            "played": 2,
+            "win": 1,
+            "draw": 1,
+            "loss": 0,
+            "gd": 4,
+            "pts": 4
+          },
+          {
+            "team": "乌拉圭",
+            "played": 2,
+            "win": 0,
+            "draw": 2,
+            "loss": 0,
+            "gd": 0,
+            "pts": 2
+          },
+          {
+            "team": "佛得角",
+            "played": 2,
+            "win": 0,
+            "draw": 2,
+            "loss": 0,
+            "gd": 0,
+            "pts": 2
+          },
+          {
+            "team": "沙特",
+            "played": 2,
+            "win": 0,
+            "draw": 1,
+            "loss": 1,
+            "gd": -4,
+            "pts": 1
+          }
+        ]
+      },
+      "moments": [
+        {
+          "time": "10'",
+          "title": "亚马尔左脚兜射首开纪录",
+          "body": "西班牙边锋在右路内切后打入世界波，帮助球队把早段控球优势迅速兑现成比分领先。",
+          "match": "西班牙 4-0 沙特"
+        },
+        {
+          "time": "21'",
+          "title": "奥亚萨瓦尔门前吃饼扩大比分",
+          "body": "亚马尔连续制造威胁后再次送出关键传递，奥亚萨瓦尔近距离推射得手，沙特防线开始明显后撤。",
+          "match": "西班牙 4-0 沙特"
+        },
+        {
+          "time": "49'",
+          "title": "阿尔坦巴克蒂自摆乌龙",
+          "body": "库库雷利亚的传中继续制造混乱，沙特后卫回追解围不慎送入自家球门，比赛悬念基本结束。",
+          "match": "西班牙 4-0 沙特"
+        },
+        {
+          "time": "68'",
+          "title": "比利时十人守住关键平局",
+          "body": "恩戈伊染红后比利时被迫退守，伊朗此后虽攻入一球但越位在先，双方最终各取一分。",
+          "match": "比利时 0-0 伊朗"
+        },
+        {
+          "time": "32'",
+          "title": "巴尔韦德远射点燃迈阿密",
+          "body": "乌拉圭中场核心先用禁区外重炮破门，但佛得角并未乱阵脚，比赛很快演变成来回对攻。",
+          "match": "乌拉圭 2-2 佛得角"
+        },
+        {
+          "time": "88'",
+          "title": "塔瓦雷斯绝平保住佛得角希望",
+          "body": "佛得角末段利用禁区混战二次进攻再次追平，把 H 组最终出线悬念留到末轮。",
+          "match": "乌拉圭 2-2 佛得角"
+        },
+        {
+          "time": "8'",
+          "title": "苏尔曼头球让新西兰梦幻开局",
+          "body": "新西兰开场角球制造杀机，苏尔曼抢点头槌破门，一度把埃及逼入被动局面。",
+          "match": "新西兰 1-3 埃及"
+        },
+        {
+          "time": "67'",
+          "title": "萨拉赫反超比分",
+          "body": "埃及在连续施压后终于由萨拉赫完成致命一击，随后特雷泽盖再进一球锁定胜势。",
+          "match": "新西兰 1-3 埃及"
+        }
+      ]
     },
     "2026-06-23": {
       "label": "6月23日",
