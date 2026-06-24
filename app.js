@@ -61,7 +61,7 @@ const confirmedKickoffTimes = {
   "mar-hai": "6/25 06:00",
   "sui-can": "6/25 03:00",
   "bih-qat": "6/25 03:00",
-  "cze-mex": "6/25 00:00",
+  "cze-mex": "6/25 09:00",
   "rsa-kor": "6/25 09:00",
   "cur-civ": "6/26 04:00",
   "ecu-ger": "6/26 04:00",
