@@ -3,7 +3,6 @@
   if (!board?.days?.["2026-06-15"]) return;
 
   board.meta.mode = "手动核对赛果更新";
-  board.meta.updatedAt = "2026-06-16 11:07";
 
   const day = board.days["2026-06-15"];
   const updates = {
