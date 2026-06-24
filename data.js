@@ -2,7 +2,7 @@ window.WORLD_CUP_BOARD_DATA = {
   "meta": {
     "tournament": "2026 世界杯",
     "mode": "手动核对赛果更新",
-    "updatedAt": "2026-06-25 00:08"
+    "updatedAt": "2026-06-25 00:25"
   },
   "days": {
     "2026-06-12": {
@@ -2847,7 +2847,7 @@ window.WORLD_CUP_BOARD_DATA = {
           "id": "cze-mex",
           "group": "A组",
           "status": "scheduled",
-          "minute": "6/25 00:00",
+          "minute": "6/25 09:00",
           "home": {
             "code": "CZE",
             "name": "捷克",
