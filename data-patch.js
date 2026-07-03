@@ -3,7 +3,7 @@
   if (!board?.days) return;
 
   board.meta.mode = "32强赛收官阶段与16强对阵更新";
-  board.meta.updatedAt = "2026-07-04 00:20";
+  board.meta.updatedAt = "2026-07-04 00:14";
 
   const match = (
     id,
