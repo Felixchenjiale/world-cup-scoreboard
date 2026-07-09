@@ -2,8 +2,8 @@
   const board = window.WORLD_CUP_BOARD_DATA;
   if (!board?.days) return;
 
-  board.meta.mode = "16强赛收官与8强赛程确认";
-  board.meta.updatedAt = "2026-07-09 00:07";
+  board.meta.mode = "8强赛开赛前";
+  board.meta.updatedAt = "2026-07-10 00:10";
 
   const match = (
     id,
@@ -257,7 +257,7 @@
   ]);
 
   setDay("2026-07-10", "7月10日", "8强赛", [
-    match("fra-mar-qf", "淘汰赛", "7/10 04:00", "FRA", "法国", "MAR", "摩洛哥", "福克斯伯勒", "8强赛，法国对阵摩洛哥；胜者将在半决赛对阵西班牙与比利时之间的胜者。")
+    match("fra-mar-qf", "淘汰赛", "7/10 04:00", "FRA", "法国", "MAR", "摩洛哥", "福克斯伯勒", "截至北京时间 7 月 10 日 00:10，本场 8 强赛尚未开赛；胜者将在半决赛对阵西班牙与比利时之间的胜者。")
   ]);
 
   setDay("2026-07-11", "7月11日", "8强赛", [
